@@ -1,5 +1,6 @@
 import { Container,Nav,Navbar } from 'react-bootstrap';
 import AddCard from './AddCard';
+import {Link} from 'react-router-dom'
 function NavbarMovie({film,setFilm}){
     return(
 
@@ -9,8 +10,10 @@ function NavbarMovie({film,setFilm}){
                     
                         <Navbar.Brand><img src="./raouaa.PNG" alt='' style={{height : '30px'}} /></Navbar.Brand>
                         <Nav className="me-auto">
-                            <Nav.Link href='/'>Home</Nav.Link>
-                            <Nav.Link href='/Movies'>Movies</Nav.Link>
+            
+                            <Link to='/'>Home</Link>
+                            <Link to='/Movies'>Movies</Link>
+                           
                             
                         </Nav>
                         

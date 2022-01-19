@@ -3,10 +3,11 @@ import './App.css';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Components/Home';
-import {Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavbarMovie from './Components/NavbarMovie'
 import MovieApp from './MovieApp';
 import Child from './Components/Child'
+import MovieList from './Components/MovieList';
 
 
 function App() {
@@ -25,13 +26,15 @@ function App() {
 
   return (
     <div>
+      <Router>
       <NavbarMovie film = {film} setFilm = {setFilm}/>
       <Routes>
       
-      <Route  path="/" element={Home}  />
-      <Route  path="/Movies" element={() => <MovieApp film={film} setFilm={setFilm} />}  />
-      <Route  exact path="/Movies/:slug" element={<Child film = {film} />} /> 
+      <Route  path="/" element={<Home/>}  />
+      <Route path="./Movies" element={ <MovieList setFilm={setFilm} film={film}/>}/>
+      <Route  path="/Movies/:slug" element={<Child film = {film} />} /> 
       </Routes>
+      </Router>
     </div>
 
    
