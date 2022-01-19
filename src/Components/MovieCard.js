@@ -13,7 +13,7 @@ function MovieCard({el,film,setFilm,i}){
             <p>{el.description}</p>
             <ReactStars count={el.rating}  size={24} color="#ffd700"/>    
             <EditCard el = {el} film = {film} setFilm = {setFilm} i ={i}></EditCard>  
-            <Link to={`/details/$(movie.id)`}><button>details</button> </Link>
+            <Link to={`/details/${el.id}`}><button>details</button> </Link>
 </div>
         
                 
